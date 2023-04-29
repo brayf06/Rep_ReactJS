@@ -1,20 +1,38 @@
+import React, {useState} from "react";
 import "./NavBarStyle.css"
+import "./CartWidget/CartWidget.js"
+import CartWidget from "./CartWidget/CartWidget.js";
 
 function NavBar(){
-    return(
-        <nav>
-            <a><svg id="logo-89" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="ccustom" d="M39.9449 21.4998H32.8003C26.5594 21.4998 21.5003 26.559 21.5003 32.7998V39.9444C31.3502 39.214 39.2145 31.3497 39.9449 21.4998Z" fill="#775732"></path><path class="ccustom" d="M18.5003 39.9444V32.7998C18.5003 26.559 13.4411 21.4998 7.20026 21.4998H0.0556641C0.785998 31.3497 8.65036 39.214 18.5003 39.9444Z" fill="#775732"></path><path class="ccustom" d="M39.9449 18.4998C39.2145 8.64987 31.3502 0.78551 21.5003 0.0551758V7.19977C21.5003 13.4406 26.5594 18.4998 32.8003 18.4998H39.9449Z" fill="#775732"></path><path class="ccustom" d="M18.5003 0.0551758C8.65036 0.78551 0.785998 8.64987 0.0556641 18.4998H7.20026C13.4411 18.4998 18.5003 13.4406 18.5003 7.19977V0.0551758Z" fill="#775732"></path><path class="ccustom" d="M13.583 19.9998C16.3555 18.6145 18.615 16.355 20.0002 13.5825C21.3855 16.355 23.6449 18.6145 26.4175 19.9998C23.6449 21.385 21.3855 23.6445 20.0002 26.417C18.615 23.6445 16.3555 21.385 13.583 19.9998Z" fill="#CA9352"></path></svg></a>
-            <div>
-                <ul id="navbar">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html">Tienda</a></li>
-                    <li><a href="index.html">Servicios</a></li>
-                    <li><a href="index.html">Testimonios</a></li>
-                    <li><a href="index.html">Contacto</a></li>
+    const [active, setActive] = useState("nav__menu");
+    const [toggleIcon, setToggleIcon] = useState("nav__toggler");
+    const navToggle = () => {
+        active === 'nav__menu' ? setActive('nav__menu nav__active') : setActive('nav__menu');
 
+        toggleIcon === 'nav__toggler' ? setToggleIcon('nav__toggler toggle') : setToggleIcon('nav__toggler');
+    }
+    return(
+    <div>
+         <nav className="nav">
+            <a><svg id="logo-58" width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="stroke" d="M25 43.94H14.06L10.86 38.39L8.28998 33.94L10.86 29.48" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M10.86 29.4801H5.7L3.13 25.0001L6.77 18.6901L8.27001 16.1001L10.87 11.6101L13.44 7.15006L14.06 6.06006H25" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M25 39.48H16.64L13.44 33.94L10.86 29.48L13.47 25H8.28003L11.95 18.63L13.44 16.06L16.01 11.61L16.64 10.52H25" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M25 15.01H19.23L13.47 25L19.23 34.99H25" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M8.28001 25L5.70001 29.48" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M44.3 29.48L41.72 25" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M25 43.94H35.94L39.14 38.39L41.71 33.94L39.14 29.48" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M39.14 29.4801L44.31 29.4401L46.87 25.0001L43.23 18.6901L41.73 16.1001L39.13 11.6101L36.56 7.15006L35.94 6.06006H25" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M25 39.48H33.36L36.56 33.94L39.14 29.48L36.53 25H41.72L38.05 18.63L36.56 16.06L33.99 11.61L33.36 10.52H25" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M25 15.01H30.77L36.53 25L30.77 34.99H25" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M19.23 15.01L16.64 10.52" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M30.77 15.01L33.36 10.52" stroke="#231F20" stroke-width="0.5" stroke-miterlimit="10"></path></svg>TCT Group</a>
+             <div>
+               <ul className={active}>
+                    <li className="nav__item"><a href="index.html" className="nav__link">Inicio</a></li>
+                    <li className="nav__item"><a href="tienda.html" className="nav__link">Tienda</a></li>
+                    <li className="nav__item"><a href="servicios.html" className="nav__link">Servicios</a></li>
+                    <li className="nav__item"><a href="testimonio.html" className="nav__link">Testimonios</a></li>
+                    <li className="nav__item"><a href="contacto.html" className="nav__link">Contacto</a></li>
+                    <li className="nav__item"><a href="" className="nav__link"><CartWidget/></a></li>
                 </ul>
             </div>
-        </nav>
+            
+             <div onClick={navToggle} className={toggleIcon}>
+                <div className="line1"></div>
+                <div className="line2"></div>
+                <div className="line3"></div>
+            </div>
+         </nav> 
+    </div>
     )
 }
 export default NavBar
