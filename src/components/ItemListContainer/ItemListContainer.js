@@ -1,8 +1,8 @@
-import Title from '../Title/Title';
+import Item from '../Item/Items';
 
 function ItemListContainer(props){
     return(
-        <Title textoRecibido={props.texto}/>
+        <Item textoRecibido={props.texto}/>
     )
 }
 
