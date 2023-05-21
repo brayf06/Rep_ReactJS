@@ -1,43 +1,33 @@
+import { useEffect, useS, useState } from 'react'
+
 import React from 'react'
 import Item from './Item'
-import ItemCount from "../ItemCount/ItemCount"
+import data from "../data/data"
 
-import image1 from './img/asia.jpg'
-import image2 from './img/caribe.jpg'
-import image3 from './img/europa.jpg'
-
-const items = [
-    {
-        id: 1,
-        title: "Descubre Asia",
-        description: "Descubre algunos de los mejores turismos en Asia al mejor precio, solicita cotizacion agregando el item al carrito",
-        price: 4500,
-        image: image1
-    },
-    {
-        id: 2,
-        title: "Viaje al Caribe",
-        description: "Disfruta de las playas paradisiacas del caribe al mejor precio, solicita cotizacion agregando el item al carrito",
-        price: 1500,
-        image: image2
-    },
-    {
-        id: 3,
-        title: "Conoce Europa",
-        description: "Conoce algunas de las mejores ciudades europeas del mundo al mejor precio, solicita cotizacion agregando el item al carrito:",
-        price: 2500,
-        image: image3
-    }
-]
+function getData(){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(data);
+        }, 2000);
+    });
+}
 
 function Items(){
+    let [items, setItems] = useState([])
+
+    useEffect( () => {
+        getData().then((respuesta) => {
+            setItems(respuesta)
+        })
+    }, [])
+
     return (
-        <div className='container d-flex justify-content-center align-items-center p-5'>
+        <div className='container container-md d-flex justify-content-center ' >
             <div className='row'>
                 {
-                    items.map(item => (
-                        <div className='col-md-4' key={item.id}>
-                        <Item title={item.title} imgSRC={item.image} description={item.description} price={item.price} stock={5}/>
+                    data.map(item => (
+                        <div className='col-md-4' key={item.id} style={{padding:"10px"}}>
+                        <Item title={item.ciudad} imgSRC={item.imagen} principales_atracciones={item.principales_atracciones} price={item.precio} stock={item.stock}/>
                         </div>
                     ))
                 }
