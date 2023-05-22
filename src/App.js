@@ -1,16 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import * as bootstrap from 'bootstrap';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from "./pages/Homepage"
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
-    <>
-    <NavBar/>
-    <ItemListContainer texto="Bienvenido al proyecto ReactJS"/>
-    </>
+     <BrowserRouter>
+     <NavBar/>
+       <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product/:id" element={<ItemDetailContainer />} />
+        <Route path="*" element={<h4>Error 404: Page not found</h4>} />
+       </Routes>
+     </BrowserRouter>
+   // <ItemDetailContainer/>
   );
 }
 

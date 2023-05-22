@@ -1,15 +1,14 @@
-import React from "react"
 
-import roma from "../imagenes/roma.jpg"
-import paris from "../imagenes/paris.jpg"
-import nueva_york from "../imagenes/new-york.jpg"
-import pekin from "../imagenes/pekin.jpg"
-import barcelona from "../imagenes/barcelona.jpg"
-import sidney from "../imagenes/sidney.jpg"
-import marrakech from "../imagenes/Marrakech.jpg"
-import rio from "../imagenes/rio.jpg"
-import cusco from "../imagenes/cusco.jpg"
-import tokio from "../imagenes/tokio.jpg"
+import roma from "../data/imagenes/roma.jpg"
+import paris from "../data/imagenes/paris.jpg"
+import nueva_york from "../data/imagenes/new-york.jpg"
+import pekin from "../data/imagenes/pekin.jpg"
+import barcelona from "../data/imagenes/barcelona.jpg"
+import sidney from "../data/imagenes/sidney.jpg"
+import marrakech from "../data/imagenes/Marrakech.jpg"
+import rio from "../data/imagenes/rio.jpg"
+import cusco from "../data/imagenes/cusco.jpg"
+import tokio from "../data/imagenes/tokio.jpg"
 
 const destinos_turisticos = [
     {

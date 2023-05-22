@@ -1,4 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount"
+import withConsoleLog from "../HOC/HOC"
 
 function Item ({title, imgSRC, principales_atracciones, price, stock}){
     return(
@@ -22,5 +23,5 @@ function Item ({title, imgSRC, principales_atracciones, price, stock}){
         </>        
     )
 }
-
-export default Item
+const WrappedComponent = withConsoleLog(Item);
+export default WrappedComponent
