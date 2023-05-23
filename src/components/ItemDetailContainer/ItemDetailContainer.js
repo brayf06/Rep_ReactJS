@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import data from "../data/data"
 import { useParams } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 
 function getItemData(idRecibida){
     return new Promise((resolve) => {
@@ -22,11 +23,20 @@ useEffect(() => {
   });
 }, [id]);
 
-
 return(
-    <div className="card text-center bg-dark mw-50">
-           
-    </div>   
+    <div className="card" style={{height: 50}}>
+        <div className="card text-center bg-dark mw-50">
+        <img className="card-img-top" src={item.imagen} alt="ciudad_img"/>
+        <div className="card-body text-light" >
+          <h2 className="card-title">{item.pais} - {item.ciudad}</h2>
+          <h3 className="card-text text-secondary">{item.descripcion}</h3>
+          <h4 className="card-text">${item.precio}</h4>
+          <ItemCount stock={item.stock}/>
+          <br></br>
+          <a href="#!" className="btn btn-outline-secondary rounded-0"> Agregar al carrito </a> 
+        </div>
+      </div>     
+    </div>    
 )
 }
 

@@ -2,13 +2,7 @@ import { useState } from "react";
 
 export default function Button(props) {
   
-    function handleClick() {
-      props.onClick();
-    }
-  
     return (
-      <button onClick={handleClick}>
-        {props.children}
-      </button>
+      <button className="btn btn-outline-secondary rounded-0" > {props.children} </button>
     );
   }
