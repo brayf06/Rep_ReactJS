@@ -23,6 +23,7 @@ a{
     justify-content: space-around;
     height: 25%;
     background-color: #4d4d4d;
+    
 }
 
 .nav__menu{
@@ -30,6 +31,7 @@ a{
     align-items: center;
     justify-content: space-around;
     gap: 3rem;
+    
 }
 .nav__item{
     color:#4d4d4d;
@@ -46,6 +48,10 @@ a{
 .nav__toggler{
     cursor: pointer;
     display: none;
+}
+
+.nav__link{
+    color: #fff
 }
 
 @media screen and (max-width: 768px) {

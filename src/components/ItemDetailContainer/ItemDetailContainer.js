@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react'
 import data from "../data/data"
 import { useParams } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
+import "./ItemDetailContainer.css"
+
 
 function getItemData(idRecibida){
     return new Promise((resolve) => {
         setTimeout(() => {
             const requestedItem = data.find( item => item.id === Number(idRecibida))
             resolve(requestedItem)
-        }, 2000);
+        }, 150);
     })
 }
 
@@ -24,8 +26,8 @@ useEffect(() => {
 }, [id]);
 
 return(
-    <div className="card" style={{height: 50}}>
-        <div className="card text-center bg-dark mw-50">
+    <div className="card entrada__box detail__box">
+        <div className="card text-center bg-dark mw-50 img_size ">
         <img className="card-img-top" src={item.imagen} alt="ciudad_img"/>
         <div className="card-body text-light" >
           <h2 className="card-title">{item.pais} - {item.ciudad}</h2>

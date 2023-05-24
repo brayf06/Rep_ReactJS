@@ -7,7 +7,7 @@ function getData(){
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(data);
-        }, 1000);
+        }, 2000);
     });
 }
 
