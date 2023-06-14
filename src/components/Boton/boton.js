@@ -1,8 +1,11 @@
-import { useState } from "react";
-
-export default function Button(props) {
+export default function Button({onClick, children}) {
   
+  // function handleClick(){
+  //   onClick();
+    
+  // }
+
     return (
-      <button className="btn btn-outline-secondary rounded-0" > {props.children} </button>
+      <button className="btn btn-outline-secondary rounded-0" onClick={onClick} > {children} </button>
     );
   }

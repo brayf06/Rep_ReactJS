@@ -26,7 +26,7 @@ function NavBar(){
             </Link>
              <div>
                <ul className={active}>
-                <Nav.Link href="/" className="nav__link">Inicio</Nav.Link>
+                <Link to="/" className="nav__link">Inicio</Link>
                 <NavDropdown title="Destinos" className="nav__link">
                     <NavDropdown.Item className="nav__link"><NavLink to="/continente/AmericadelSur">America del Sur</NavLink></NavDropdown.Item>
                     <NavDropdown.Item className="nav__link"><NavLink to="/continente/Europa">Europa</NavLink></NavDropdown.Item>
@@ -34,7 +34,7 @@ function NavBar(){
                     <NavDropdown.Item className="nav__link"><NavLink to="/continente/Oceania">Oceania</NavLink></NavDropdown.Item>
                     <NavDropdown.Item className="nav__link"><NavLink to="/continente/AmericadelNorte">America del Norte</NavLink></NavDropdown.Item>
                 </NavDropdown>    
-                    <Nav.Link><Link to="/contacto" className="nav__link">Contacto</Link></Nav.Link>
+                    <Link to="/contacto" className="nav__link">Contacto</Link>
                     <li className="nav__item"><a href="" className="nav__link"><CartWidget/></a></li>
                 
                 </ul>

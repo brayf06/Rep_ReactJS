@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import data from "../data/data"
 import { useParams } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount';
 import "./ItemDetailContainer.css"
-import ItemDetail from "../Item/ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { cartContext } from "../../context/cartContext"
 
 
 function getItemData(idRecibida){
@@ -18,6 +18,16 @@ function getItemData(idRecibida){
 function ItemDetailContainer(){
 const [item, setItem] = useState({})
 
+const {cart, addItem}  = useContext(cartContext)
+console.log("context:", cart)
+
+function onAddToCart(count){
+  addItem(item, count)
+  alert(`Agregaste ${count} viajes a ${item.pais} al carrito`)
+}
+
+
+
 const id = useParams().id;
 
 useEffect(() => {
@@ -27,7 +37,7 @@ useEffect(() => {
 }, [id]);
 
 return(
-    <ItemDetail item={item}/>
+    <ItemDetail item={item} onAddToCart={onAddToCart} />
 )
 }
 

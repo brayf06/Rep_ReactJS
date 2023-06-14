@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount"
 import withConsoleLog from "../HOC/HOC"
 
-function ItemDetail ({item}){
+function ItemDetail ({item , onAddToCart}){
     return(
         <>
         <div className="card entrada__box detail__box">
@@ -11,14 +11,11 @@ function ItemDetail ({item}){
           <h2 className="card-title">{item.pais} - {item.ciudad}</h2>
           <h3 className="card-text text-secondary">{item.descripcion}</h3>
           <h4 className="card-text">${item.precio}</h4>
-          <ItemCount stock={item.stock}/>
-          <br></br>
-          <a href="#!" className="btn btn-outline-secondary rounded-0"> Agregar al carrito </a> 
+          <ItemCount onAddToCart={onAddToCart} stock={item.stock}/>
         </div>
       </div>     
     </div>    
-        
-        </>        
+      </>        
     )
 }
 const WrappedComponent = withConsoleLog(ItemDetail);

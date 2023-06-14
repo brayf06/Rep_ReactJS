@@ -12,11 +12,6 @@ function Item ({title, imgSRC, principales_atracciones, price, stock, id}){
                 <h2 className="card-title">{title}</h2>
                 <p className="card-text text-secondary">Sus principales atracciones son: {principales_atracciones}</p>
                 <h4 className="card-text">${price}</h4>
-                <ItemCount stock={stock}/>
-                <br></br>
-                <a href="#!" className="btn btn-outline-secondary rounded-0">
-                Agregar al carrito    
-                </a>
                 <br></br>
                 <Link to={`/destino/${id}`}>
                     <Button>Ver detalle</Button>    
