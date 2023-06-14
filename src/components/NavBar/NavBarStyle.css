@@ -59,6 +59,7 @@ a{
         display: block;
     }
     .nav__menu{
+        display: block;
         position: fixed;
         top: 7vh;
         right: 0;

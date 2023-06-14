@@ -8,15 +8,17 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 
 function App() {
   return (
-     <BrowserRouter>
-     <NavBar/>
+    <BrowserRouter>
+    <NavBar/>
        <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/destino/:id" element={<ItemDetailContainer />} />
-        <Route path="/continente/:idCategoria" element={<HomePage />} />
-        <Route path="*" element={<h4>Error 404: Page not found</h4>} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/destino/:id" element={<ItemDetailContainer />} />
+          <Route path="/continente/:idCategoria" element={<HomePage />} />
+          <Route path="*" element={<h4>Error 404: Page not found</h4>} />
        </Routes>
      </BrowserRouter>
+    
+     
   );
 }
 

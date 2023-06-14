@@ -1,5 +1,7 @@
 import "../CartWidget/CartWidget.js"
 import CartWidget from "../CartWidget/CartWidget.js";
+import { NavDropdown } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import React, {useState} from "react";
 import "./NavBarStyle.css"
@@ -24,22 +26,17 @@ function NavBar(){
             </Link>
              <div>
                <ul className={active}>
-                    <li className="nav__item">
-                    <NavLink className="nav__link" to="/continente/AmericadelSur">America del Sur</NavLink>
-                    </li>
-                    <li className="nav__item">
-                    <NavLink className="nav__link" to="/continente/Europa">Europa</NavLink>
-                    </li>
-                    <li className="nav__item">
-                    <NavLink className="nav__link" to="/continente/Asia">Asia</NavLink>
-                    </li>
-                    <li className="nav__item">
-                    <NavLink className="nav__link" to="/continente/Oceania">Oceania</NavLink>
-                    </li>
-                    <li className="nav__item">
-                    <NavLink className="nav__link" to="/continente/AmericadelNorte">America del Norte</NavLink>
-                    </li>
+                <Nav.Link href="/" className="nav__link">Inicio</Nav.Link>
+                <NavDropdown title="Destinos" className="nav__link">
+                    <NavDropdown.Item className="nav__link"><NavLink to="/continente/AmericadelSur">America del Sur</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item className="nav__link"><NavLink to="/continente/Europa">Europa</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item className="nav__link"><NavLink to="/continente/Asia">Asia</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item className="nav__link"><NavLink to="/continente/Oceania">Oceania</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item className="nav__link"><NavLink to="/continente/AmericadelNorte">America del Norte</NavLink></NavDropdown.Item>
+                </NavDropdown>    
+                    <Nav.Link><Link to="/contacto" className="nav__link">Contacto</Link></Nav.Link>
                     <li className="nav__item"><a href="" className="nav__link"><CartWidget/></a></li>
+                
                 </ul>
             </div>
             
