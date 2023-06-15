@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from 'sweetalert2'
 
 export const cartContext = createContext({ cart: []})
 
@@ -8,8 +9,26 @@ export function CartContextProvider({children}){
 
     function addItem(item, count){
         const nuevoCarrito = [...cart]
-        nuevoCarrito.push( {...item, count })
-        setCart(nuevoCarrito)
+
+        if (isInCart(item.id)){
+            let newCart = cart.map(cartItem => {
+                if (cartItem.id === item.id){
+                    return { ...cartItem, count: cartItem.count + count} 
+                }
+                else{
+                    return { ...cartItem}
+                }
+            })
+            setCart(newCart)
+        }
+        else{            
+            nuevoCarrito.push( {...item, count })
+            setCart(nuevoCarrito)
+        }
+    }
+
+    function isInCart(id){
+        return cart.some((item) => item.id === id)
     }
 
     function countItem(){
@@ -23,13 +42,20 @@ export function CartContextProvider({children}){
         cart.forEach(item => {totalPrice += (item.precio * item.count)})
         return totalPrice
     }
-    function clear(){
-        cart.clear
+    function clearCart(){
+        const carritoVacio = []
+        setCart(carritoVacio)
     }
     function removeItem(idDelete){
         setCart(cart.filter(item => item.id != idDelete))
+        let itemGuardado = cart.find((item => item.id === idDelete))
+        Swal.fire(
+            '¡Reserva cancelada!',
+            `Quitaste tus ${itemGuardado.count} pasajes a ${itemGuardado.pais} con destino a la ciudad de ${itemGuardado.ciudad} con exito`,
+            'success'
+          )
     }
     return (
-        <cartContext.Provider value={ { cart, setCart, addItem, countItem, countTotalPrice, removeItem, clear } }>{children}</cartContext.Provider>
+        <cartContext.Provider value={ { cart, setCart, addItem, countItem, countTotalPrice, removeItem, isInCart, clearCart } }>{children}</cartContext.Provider>
     )
 }

@@ -1,7 +1,8 @@
 import ItemCount from "../ItemCount/ItemCount"
 import withConsoleLog from "../HOC/HOC"
+import { Link } from "react-router-dom";
 
-function ItemDetail ({item , onAddToCart}){
+function ItemDetail ({item , onAddToCart, countInCart}){
     return(
         <>
         <div className="card entrada__box detail__box">
@@ -11,7 +12,12 @@ function ItemDetail ({item , onAddToCart}){
           <h2 className="card-title">{item.pais} - {item.ciudad}</h2>
           <h3 className="card-text text-secondary">{item.descripcion}</h3>
           <h4 className="card-text">${item.precio}</h4>
-          <ItemCount onAddToCart={onAddToCart} stock={item.stock}/>
+          {countInCart === 0 ? (
+            <ItemCount onAddToCart={onAddToCart} stock={item.stock}/>
+          ) : (
+            <Link to="/cart" className="card-text text-secondary">Ir al carrito</Link>
+          )}
+          
         </div>
       </div>     
     </div>    

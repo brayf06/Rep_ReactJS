@@ -1,7 +1,6 @@
 import "../CartWidget/CartWidget.js"
 import CartWidget from "../CartWidget/CartWidget.js";
 import { NavDropdown } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import React, {useState} from "react";
 import "./NavBarStyle.css"
@@ -35,7 +34,7 @@ function NavBar(){
                     <NavDropdown.Item className="nav__link"><NavLink to="/continente/AmericadelNorte">America del Norte</NavLink></NavDropdown.Item>
                 </NavDropdown>    
                     <Link to="/contacto" className="nav__link">Contacto</Link>
-                    <li className="nav__item"><a href="" className="nav__link"><CartWidget/></a></li>
+                    <Link to="/cart" className="nav__link"><CartWidget/></Link>
                 
                 </ul>
             </div>

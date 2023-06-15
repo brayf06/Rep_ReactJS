@@ -17,7 +17,7 @@ function ItemCount(props){
     return (
         <div className="count-container text-center">
             <div className="count-btns">
-                <p className="card-text text-secondary">Agregue la cantidad deseada</p>
+                <p className="card-text text-secondary">¿Cuantos pasajes desea reservar?</p>
                 <Flex>
                     <Button className="btn btn-outline-secondary rounded-0" onClick={handleSubstract}> - </Button>
                     <a style={{padding: "20px" }}>{count}</a>

@@ -1,7 +1,11 @@
 import Item from "../Item/Item";
 import Flex from "../Flex/Flex";
+import Loader from "../Loader/Loader"
 
 function ItemList({ city }) {
+
+  if (city.length === 0) return <Loader />
+
   return (
     <div>
       <Flex>
