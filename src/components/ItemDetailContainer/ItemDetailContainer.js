@@ -1,23 +1,12 @@
 import { useEffect, useState, useContext } from 'react'
-import data from "../data/data"
 import { useParams } from 'react-router-dom';
 import "./ItemDetailContainer.css"
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { cartContext } from "../../context/cartContext"
 import Loader from "../Loader/Loader"
 import Swal from 'sweetalert2'
+import { getItemData } from '../../services/firebase';
 
-
-
-
-function getItemData(idRecibida){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            const requestedItem = data.find( item => item.id === Number(idRecibida))
-            resolve(requestedItem)
-        }, 2000);
-    })
-}
 
 function ItemDetailContainer(){
 const [item, setItem] = useState()

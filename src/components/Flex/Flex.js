@@ -1,9 +1,7 @@
 function Flex({ children }) {
 
     return (
-      <div>
-        <div >{children}</div>
-      </div>
+       <div>{children}</div>
     );
   }
   

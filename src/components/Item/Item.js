@@ -18,7 +18,7 @@ function Item ({title, imgSRC, principales_atracciones, price, stock, id}){
                 </Link>    
             </div>
         </div>   
-        
+
         </>        
     )
 }

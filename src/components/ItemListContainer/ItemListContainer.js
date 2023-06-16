@@ -1,30 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList"
-import data from "../data/data"
-
-function getData(){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(data);
-        }, 2000);
-    });
-}
+import { getData, getCategoryData } from "../../services/firebase";
 
 function ItemListContainer(){
     let [city, setItem] = useState([]);
     const { idCategoria } = useParams();
 
+const reciboContinentes = idCategoria === undefined ? getData : getCategoryData
+
     useEffect(() => {
-        getData().then((respuesta) => {
-            if (idCategoria) {
-            const filtrarDestino = respuesta.filter(
-            (item) => item.continente === idCategoria
-        );
-            setItem(filtrarDestino);
-        } else {
-            setItem(respuesta);
-        }
+        reciboContinentes(idCategoria).then((respuesta) => { setItem(respuesta);
     });
   }, [idCategoria]);
 

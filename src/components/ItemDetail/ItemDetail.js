@@ -15,7 +15,7 @@ function ItemDetail ({item , onAddToCart, countInCart}){
           {countInCart === 0 ? (
             <ItemCount onAddToCart={onAddToCart} stock={item.stock}/>
           ) : (
-            <Link to="/cart" className="card-text text-secondary">Ir al carrito</Link>
+            <Link to="/cart" className="card-text text-secondary"><span>Ir al carrito</span></Link>
           )}
           
         </div>
