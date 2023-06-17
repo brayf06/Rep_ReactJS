@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom"
 
 function OrderBrief(){
-    const {orderID} = useParams()
-
+    const  { orderid } = useParams()
+    console.log(orderid)
     return (
         <h1>Gracias por su compra
-            Order number: {orderID}
+            Order number: {orderid}
         </h1>
         
     )

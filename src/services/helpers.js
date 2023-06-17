@@ -18,7 +18,10 @@ const db = getFirestore(firebaseDB)
 export async function exportData(){
     const datosCollectionRef = collection(db, "destinos")
 
+
     for(let item of destinos){
+        item.index = item.id
+        delete item.id
         const res = await addDoc(datosCollectionRef, item)
     }
 }

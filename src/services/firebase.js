@@ -61,9 +61,6 @@ export async function createOrderWithStockUpdate(data) {
     const { items } = data;
   
     for (let itemInCart of items) {
-    console.log(itemInCart.id)
-    console.log(itemInCart)
-    console.log(db)
       const refDoc = doc(db, "destinos", itemInCart.id);
       const docSnap = await getDoc(refDoc);
   
