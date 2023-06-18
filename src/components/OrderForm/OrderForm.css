@@ -11,26 +11,26 @@
 }
 
 #form-div {
-	background-color:rgba(72,72,72,0.4);
+	background-color:#4d4d4d;
 	padding-left:35px;
 	padding-right:35px;
 	padding-top:35px;
 	padding-bottom:50px;
-	width: 450px;
+	width: 350px;
 	float: left;
 	left: 50%;
 	position: absolute;
-  margin-top:30px;
-	margin-left: -260px;
+  	margin-top:30px;
+	margin-left: -200px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }
 
 .feedback-input {
-	color:#3c3c3c;
+	color:f#3c3c3c;
 	font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
-	font-size: 18px;
+	font-size: 12px;
 	border-radius: 0;
 	line-height: 22px;
 	background-color: #fbfbfb;
@@ -70,7 +70,7 @@ input:focus, textarea:focus {
 	background-color:white;
 }
 
-#button-blue{
+#button{
 	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 	float:left;
 	width: 100%;
@@ -88,7 +88,7 @@ input:focus, textarea:focus {
   font-weight:700;
 }
 
-#button-blue:hover{
+#button:hover{
 	background-color: rgba(0,0,0,0);
 	color: #a4aaac;
 }

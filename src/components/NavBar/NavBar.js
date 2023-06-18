@@ -6,6 +6,7 @@ import React, {useState} from "react";
 import "./NavBarStyle.css"
 
 
+
 function NavBar(){
     const [active, setActive] = useState("nav__menu");
     const [toggleIcon, setToggleIcon] = useState("nav__toggler");

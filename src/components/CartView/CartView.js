@@ -8,7 +8,6 @@ import CheckoutForm from "../OrderForm/OrderForm";
 import Swal from "sweetalert2";
 
 function CartView(){
-
 const navigateTo = useNavigate()
 const { cart, removeItem, countTotalPrice, clearCart} = useContext(cartContext)  
 
@@ -19,30 +18,30 @@ async function handleConfirm(userData){
     fecha: new Date(),
     precio: countTotalPrice(),
   }
-  
-  try{
-    console.log(cart)
-    if (cart.length === 0){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: "Usted no tiene reservas en la lista",
-      })
-    }
-    else{
-      const id = await (createOrderWithStockUpdate(order))
-      clearCart()
-      navigateTo(`/confirmation/${id}`)
-    }
-  }
-  catch(error)
-  {
+
+try{
+  console.log(cart)
+  if (cart.length === 0){
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: error,
+      text: "Usted no tiene reservas en la lista",
     })
   }
+  else{
+    const id = await (createOrderWithStockUpdate(order))
+    clearCart()
+    navigateTo(`/confirmation/${id}`)
+  }
+}
+catch(error)
+{
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: error,
+  })
+}
 }
 
 
@@ -55,8 +54,8 @@ return (
   <table className="cart">
     <thead className="cart__header">
       <tr className="cart__row">
-        <th>Miniatura</th>
-        <th>Titulo</th>
+        <th></th>
+        <th>Destino - Ciudad</th>
         <th>Precio</th>
         <th>Cantidad</th>
         <th>Total</th>
@@ -67,7 +66,9 @@ return (
       {cart.map((item) => (
         <tr key={item.id} className="cart__row">
           <td>
-            <img height={90} src={item.imagen} alt={item.ciudad} />
+            <div className="geeks">
+             <img className="geeks img" height={90} src={item.imagen} alt={item.ciudad} />
+            </div>
           </td>
           <td>{item.pais} - {item.ciudad}</td>
           <td>$ {item.precio}</td>
@@ -92,7 +93,7 @@ return (
   </div>
 </>
  )
-}
 
+      }
 
 export default CartView

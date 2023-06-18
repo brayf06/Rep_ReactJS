@@ -11,10 +11,11 @@ export default function CheckoutForm({ onConfirm }) {
   function onInputChange(evt) {
     const prop = evt.target.name;
     const value = evt.target.value;
-
+    
     const newData = { ...userData };
     newData[prop] = value;
     setUserData(newData);
+    
   }
 
   function onSubmit(evt) {
@@ -55,11 +56,11 @@ export default function CheckoutForm({ onConfirm }) {
           name="mail"
           type="text"
           onChange={onInputChange}
-          
+
         />
       </div>
       <div className="submit">
-      <input id="button-blue" type="submit" value="Finalizar Reserva"></input>
+      <input id="button" type="submit" value="Finalizar Reserva"></input>
       <div className="ease"></div>
       </div>
     </form>

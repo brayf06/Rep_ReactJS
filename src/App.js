@@ -7,7 +7,6 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CartView from './components/CartView/CartView'
 import { CartContextProvider } from './context/cartContext';
 import OrderBrief from './components/OrderBrief/OrderBrief'
-import { exportData } from './services/helpers';
 
 function App() {
   return (
