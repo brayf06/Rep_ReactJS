@@ -69,7 +69,8 @@ a{
     .nav__menu{
         display: block;
         position: fixed;
-        top: 7vh;
+        overflow: visible;
+        top: 6vh;
         right: 0;
         width: 50%;
         height: 93vh;

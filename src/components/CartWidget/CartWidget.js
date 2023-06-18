@@ -6,11 +6,18 @@ function CartWidget(){
 
   const { countItem } = useContext(cartContext)
   
+  if (countItem()===0){
     return (
       <Link to="/cart">
-        <span>🛒{countItem()}</span>
+        <span>🛒</span>
       </Link>
     )
+  }
+  return(
+    <Link to="/cart">
+        <span>{countItem()}🛒</span>
+    </Link>
+  )
   }
        
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./OrderForm.css"
+import Swal from "sweetalert2";
 
 export default function CheckoutForm({ onConfirm }) {
   const [userData, setUserData] = useState({
@@ -20,8 +21,16 @@ export default function CheckoutForm({ onConfirm }) {
 
   function onSubmit(evt) {
     evt.preventDefault();
-    console.log(userData);
-    onConfirm(userData);
+    if(userData.nombre === "" || userData.telefono === "" || userData.mail === ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Complete el formulario para finalizar su reserva",
+      })
+    }
+    else{
+      onConfirm(userData);
+    }
   }
 
 
@@ -37,7 +46,6 @@ export default function CheckoutForm({ onConfirm }) {
           name="nombre"
           type="text"
           onChange={onInputChange}
-          
         />
       </div>
       <div>

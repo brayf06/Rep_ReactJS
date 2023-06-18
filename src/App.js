@@ -9,10 +9,11 @@ import { CartContextProvider } from './context/cartContext';
 import OrderBrief from './components/OrderBrief/OrderBrief'
 
 function App() {
-  return (
-    <CartContextProvider>
+  return ( 
+  <>
+  <CartContextProvider>
     <BrowserRouter>
-    <NavBar/>
+       <NavBar/>
        <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/destino/:id" element={<ItemDetailContainer />} />
@@ -23,6 +24,7 @@ function App() {
        </Routes>
      </BrowserRouter>
      </CartContextProvider>
+  </> 
   );
 }
 
