@@ -65,6 +65,7 @@ a{
 @media screen and (max-width: 768px) {
     .nav__toggler{
         display: block;
+        z-index: 1;
     }
     .nav__menu{
         display: block;
@@ -76,6 +77,7 @@ a{
         height: 93vh;
         background: #4d4d4d;
         flex-direction: column;
+        z-index: 1;
         transform: translateX(100%);
         transition: 0.5s ease-in;
     }
@@ -83,6 +85,7 @@ a{
 
 .nav__active{
     transform: translateX(0%);
+    z-index: 1;
 }
 
 .toggle .line1{

@@ -33,6 +33,7 @@ function NavBar(){
                     <NavDropdown.Item className="nav__link"><NavLink to="/continente/AmericadelNorte">America del Norte</NavLink></NavDropdown.Item>
                 </NavDropdown>    
                     <Link to="/contacto" className="nav__link">Contacto</Link>
+                    <br></br>
                     <Link to="/cart" className="nav__link"><CartWidget/></Link>
                 </ul>
             

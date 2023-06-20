@@ -11,7 +11,7 @@ function ItemCount(props){
 
     function handleSubstract(){
         if (count > 1){ setCount(count - 1)}
-        
+ 
     }
 
     return (
